@@ -1,0 +1,740 @@
+2020-11-29 06:04:45.834 | INFO     | __main__:run:43 - Process Started
+2020-11-29 06:04:45.843 | ERROR    | utils:udf_method:46 - [Errno 2] No such file or directory: '../data/employees.csv'
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 60, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x00000205523B4160>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 61, in time_method
+    result = method1(*args,**kwargs)
+             |        |      -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x00000205523B40D0>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 41, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000205523B4040>
+
+  File "load_sample_data.py", line 45, in run
+    data = read_data(position)
+           |         -> 0
+           -> <function read_data at 0x00000205523B3D30>
+
+  File "load_sample_data.py", line 15, in read_data
+    df = pd.read_csv('../data/employees.csv', sep=',', skiprows=position, nrows=5)
+         |  |                                                   -> 0
+         |  -> <function read_csv at 0x0000020551B36700>
+         -> <module 'pandas' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra...
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 686, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           |     |                   -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+           |     -> '../data/employees.csv'
+           -> <function _read at 0x0000020551B36670>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 452, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+             |              |            -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+             |              -> '../data/employees.csv'
+             -> <class 'pandas.io.parsers.TextFileReader'>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 936, in __init__
+    self._make_engine(self.engine)
+    |    |            |    -> 'c'
+    |    |            -> <pandas.io.parsers.TextFileReader object at 0x00000205523A3F70>
+    |    -> <function TextFileReader._make_engine at 0x0000020551B36CA0>
+    -> <pandas.io.parsers.TextFileReader object at 0x00000205523A3F70>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1168, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+    |    |         |              |    |    |    -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |    |         |              |    |    -> <pandas.io.parsers.TextFileReader object at 0x00000205523A3F70>
+    |    |         |              |    -> '../data/employees.csv'
+    |    |         |              -> <pandas.io.parsers.TextFileReader object at 0x00000205523A3F70>
+    |    |         -> <class 'pandas.io.parsers.CParserWrapper'>
+    |    -> None
+    -> <pandas.io.parsers.TextFileReader object at 0x00000205523A3F70>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1998, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+    |              |       |          |      -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |              |       |          -> '../data/employees.csv'
+    |              |       -> <class 'pandas._libs.parsers.TextReader'>
+    |              -> <module 'pandas._libs.parsers' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python....
+    -> <pandas.io.parsers.CParserWrapper object at 0x00000205523A3C40>
+  File "pandas\_libs\parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+
+FileNotFoundError: [Errno 2] No such file or directory: '../data/employees.csv'
+2020-11-29 06:04:46.132 | ERROR    | utils:udf_method:50 - exiting the process! due to error above
+NoneType: None
+2020-11-29 06:05:26.394 | INFO     | __main__:run:43 - Process Started
+2020-11-29 06:05:50.216 | INFO     | __main__:run:43 - Process Started
+2020-11-29 20:51:52.840 | INFO     | __main__:run:46 - Process Started
+2020-11-29 20:51:52.963 | ERROR    | utils:udf_method:62 - [Errno 2] No such file or directory: '../data/employees.csv'
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 70, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x00000270FBA98310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x00000270FBA98280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000270FBA981F0>
+
+  File "load_sample_data.py", line 48, in run
+    data = read_data(position)
+           |         -> 0
+           -> <function read_data at 0x00000270FBA9EEE0>
+
+  File "load_sample_data.py", line 15, in read_data
+    df = pd.read_csv('../data/employees.csv', sep=',', skiprows=position, nrows=5)
+         |  |                                                   -> 0
+         |  -> <function read_csv at 0x00000270FB4188B0>
+         -> <module 'pandas' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra...
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 686, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           |     |                   -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+           |     -> '../data/employees.csv'
+           -> <function _read at 0x00000270FB418820>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 452, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+             |              |            -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+             |              -> '../data/employees.csv'
+             -> <class 'pandas.io.parsers.TextFileReader'>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 936, in __init__
+    self._make_engine(self.engine)
+    |    |            |    -> 'c'
+    |    |            -> <pandas.io.parsers.TextFileReader object at 0x00000270FBA9B880>
+    |    -> <function TextFileReader._make_engine at 0x00000270FB418E50>
+    -> <pandas.io.parsers.TextFileReader object at 0x00000270FBA9B880>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1168, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+    |    |         |              |    |    |    -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |    |         |              |    |    -> <pandas.io.parsers.TextFileReader object at 0x00000270FBA9B880>
+    |    |         |              |    -> '../data/employees.csv'
+    |    |         |              -> <pandas.io.parsers.TextFileReader object at 0x00000270FBA9B880>
+    |    |         -> <class 'pandas.io.parsers.CParserWrapper'>
+    |    -> None
+    -> <pandas.io.parsers.TextFileReader object at 0x00000270FBA9B880>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1998, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+    |              |       |          |      -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |              |       |          -> '../data/employees.csv'
+    |              |       -> <class 'pandas._libs.parsers.TextReader'>
+    |              -> <module 'pandas._libs.parsers' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python....
+    -> <pandas.io.parsers.CParserWrapper object at 0x00000270FBA9B940>
+  File "pandas\_libs\parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+
+FileNotFoundError: [Errno 2] No such file or directory: '../data/employees.csv'
+2020-11-29 20:51:53.112 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 20:52:37.193 | INFO     | __main__:run:46 - Process Started
+2020-11-29 20:52:37.221 | ERROR    | utils:udf_method:62 - DataFrame constructor not properly called!
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 70, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x0000028628668310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x0000028628668280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000286286681F0>
+
+  File "load_sample_data.py", line 65, in run
+    overwrite_start_position(position)
+    |                        -> 0
+    -> <function overwrite_start_position at 0x0000028628668040>
+
+  File "load_sample_data.py", line 26, in overwrite_start_position
+    df = pd.DataFrame(data=position+5, columns=['start_position'])
+         |  |              -> 0
+         |  -> <class 'pandas.core.frame.DataFrame'>
+         -> <module 'pandas' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra...
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\core\frame.py", line 529, in __init__
+    raise ValueError("DataFrame constructor not properly called!")
+
+ValueError: DataFrame constructor not properly called!
+2020-11-29 20:52:37.369 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 20:53:48.535 | INFO     | __main__:run:46 - Process Started
+2020-11-29 20:53:48.583 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 20:54:02.194 | INFO     | __main__:run:46 - Process Started
+2020-11-29 20:54:02.218 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 21:03:26.080 | INFO     | __main__:run:46 - Process Started
+2020-11-29 21:03:26.106 | ERROR    | utils:udf_method:62 - send_data_to_sqs() missing 1 required positional argument: 'df'
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 68, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x00000156A8B281F0>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x00000156A8B28160>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000156A8B280D0>
+
+  File "load_sample_data.py", line 60, in run
+    send_data_to_sqs()
+    -> <function send_data_to_sqs at 0x00000156A8B28040>
+
+TypeError: send_data_to_sqs() missing 1 required positional argument: 'df'
+2020-11-29 21:03:26.131 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 21:03:45.320 | INFO     | __main__:run:46 - Process Started
+2020-11-29 21:03:45.331 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 21:03:51.057 | INFO     | __main__:run:46 - Process Started
+2020-11-29 21:03:51.069 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 21:04:06.630 | INFO     | __main__:run:46 - Process Started
+2020-11-29 21:04:06.711 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 21:04:29.315 | INFO     | __main__:run:46 - Process Started
+2020-11-29 21:04:29.345 | INFO     | __main__:run:66 - Process Completed
+2020-11-29 21:06:25.749 | INFO     | __main__:run:47 - Process Started
+2020-11-29 21:06:25.760 | INFO     | __main__:run:67 - Process Completed
+2020-11-29 21:06:28.880 | INFO     | __main__:run:47 - Process Started
+2020-11-29 21:06:28.891 | INFO     | __main__:run:67 - Process Completed
+2020-11-29 21:06:32.472 | INFO     | __main__:run:47 - Process Started
+2020-11-29 21:06:32.479 | ERROR    | utils:udf_method:62 - No columns to parse from file
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 71, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x0000022396FB8310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x0000022396FB8280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x0000022396FB81F0>
+
+  File "load_sample_data.py", line 49, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x0000022396FBEEE0>
+
+  File "load_sample_data.py", line 15, in read_data
+    df = pd.read_csv('../data/departments', sep=',', skiprows=position, nrows=5)
+         |  |                                                 -> 30
+         |  -> <function read_csv at 0x00000223967388B0>
+         -> <module 'pandas' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra...
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 686, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           |     |                   -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+           |     -> '../data/departments'
+           -> <function _read at 0x0000022396738820>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 452, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+             |              |            -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+             |              -> '../data/departments'
+             -> <class 'pandas.io.parsers.TextFileReader'>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 936, in __init__
+    self._make_engine(self.engine)
+    |    |            |    -> 'c'
+    |    |            -> <pandas.io.parsers.TextFileReader object at 0x0000022396FBB850>
+    |    -> <function TextFileReader._make_engine at 0x0000022396738E50>
+    -> <pandas.io.parsers.TextFileReader object at 0x0000022396FBB850>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1168, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+    |    |         |              |    |    |    -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |    |         |              |    |    -> <pandas.io.parsers.TextFileReader object at 0x0000022396FBB850>
+    |    |         |              |    -> '../data/departments'
+    |    |         |              -> <pandas.io.parsers.TextFileReader object at 0x0000022396FBB850>
+    |    |         -> <class 'pandas.io.parsers.CParserWrapper'>
+    |    -> None
+    -> <pandas.io.parsers.TextFileReader object at 0x0000022396FBB850>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1998, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+    |              |       |          |      -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |              |       |          -> '../data/departments'
+    |              |       -> <class 'pandas._libs.parsers.TextReader'>
+    |              -> <module 'pandas._libs.parsers' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python....
+    -> <pandas.io.parsers.CParserWrapper object at 0x0000022396FBB910>
+  File "pandas\_libs\parsers.pyx", line 540, in pandas._libs.parsers.TextReader.__cinit__
+
+pandas.errors.EmptyDataError: No columns to parse from file
+2020-11-29 21:06:32.642 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 21:07:14.976 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:07:14.982 | ERROR    | utils:udf_method:62 - No columns to parse from file
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 74, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000001DE19678310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000001DE19678280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000001DE196781F0>
+
+  File "load_sample_data.py", line 52, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x000001DE1967EEE0>
+
+  File "load_sample_data.py", line 15, in read_data
+    df = pd.read_csv('../data/departments', sep=',', skiprows=position, nrows=5)
+         |  |                                                 -> 30
+         |  -> <function read_csv at 0x000001DE190188B0>
+         -> <module 'pandas' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra...
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 686, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           |     |                   -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+           |     -> '../data/departments'
+           -> <function _read at 0x000001DE19018820>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 452, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+             |              |            -> {'delimiter': ',', 'engine': 'c', 'dialect': None, 'compression': None, 'engine_specified': False, 'doublequote': True, 'esca...
+             |              -> '../data/departments'
+             -> <class 'pandas.io.parsers.TextFileReader'>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 936, in __init__
+    self._make_engine(self.engine)
+    |    |            |    -> 'c'
+    |    |            -> <pandas.io.parsers.TextFileReader object at 0x000001DE1967B850>
+    |    -> <function TextFileReader._make_engine at 0x000001DE19018E50>
+    -> <pandas.io.parsers.TextFileReader object at 0x000001DE1967B850>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1168, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+    |    |         |              |    |    |    -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |    |         |              |    |    -> <pandas.io.parsers.TextFileReader object at 0x000001DE1967B850>
+    |    |         |              |    -> '../data/departments'
+    |    |         |              -> <pandas.io.parsers.TextFileReader object at 0x000001DE1967B850>
+    |    |         -> <class 'pandas.io.parsers.CParserWrapper'>
+    |    -> None
+    -> <pandas.io.parsers.TextFileReader object at 0x000001DE1967B850>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\pandas\io\parsers.py", line 1998, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+    |              |       |          |      -> {'delimiter': ',', 'escapechar': None, 'quotechar': '"', 'quoting': 0, 'doublequote': True, 'skipinitialspace': False, 'linet...
+    |              |       |          -> '../data/departments'
+    |              |       -> <class 'pandas._libs.parsers.TextReader'>
+    |              -> <module 'pandas._libs.parsers' from 'C:\\Users\\Sai Prashanth T S\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python....
+    -> <pandas.io.parsers.CParserWrapper object at 0x000001DE1967B910>
+  File "pandas\_libs\parsers.pyx", line 540, in pandas._libs.parsers.TextReader.__cinit__
+
+pandas.errors.EmptyDataError: No columns to parse from file
+2020-11-29 21:07:15.087 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 21:10:41.843 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:10:41.847 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 74, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000001F16B628310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000001F16B628280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000001F16B6281F0>
+
+  File "load_sample_data.py", line 52, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x000001F16B62EEE0>
+
+  File "load_sample_data.py", line 17, in read_data
+    exit(0)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 0
+
+SystemExit: 0
+2020-11-29 21:10:58.587 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:10:58.592 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 74, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x0000022660288310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x0000022660288280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000226602881F0>
+
+  File "load_sample_data.py", line 52, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x000002266028EEE0>
+
+  File "load_sample_data.py", line 17, in read_data
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
+2020-11-29 21:11:32.887 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:11:32.892 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 74, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000001EB4D2A8310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000001EB4D2A8280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000001EB4D2A81F0>
+
+  File "load_sample_data.py", line 52, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x000001EB4D2AEEE0>
+
+  File "load_sample_data.py", line 17, in read_data
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
+2020-11-29 21:11:53.961 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:11:53.972 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:11:56.512 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:11:56.520 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:11:59.214 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:11:59.223 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:12:01.903 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:12:01.920 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:12:04.517 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:12:04.529 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:12:07.423 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:12:07.433 | INFO     | __main__:run:70 - Process Completed
+2020-11-29 21:12:10.809 | INFO     | __main__:run:50 - Process Started
+2020-11-29 21:12:10.814 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 74, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000002AEA6C97310>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000002AEA6C97280>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000002AEA6C971F0>
+
+  File "load_sample_data.py", line 52, in run
+    data = read_data(position)
+           |         -> 30
+           -> <function read_data at 0x000002AEA6C9EEE0>
+
+  File "load_sample_data.py", line 17, in read_data
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
+2020-11-29 21:21:37.473 | INFO     | __main__:run:102 - Process Started
+2020-11-29 21:21:37.485 | INFO     | __main__:run:122 - Process Completed
+2020-11-29 21:22:38.871 | INFO     | __main__:run:102 - Process Started
+2020-11-29 21:22:41.800 | ERROR    | utils:udf_method:62 - An error occurred (ExpiredToken) when calling the GetQueueUrl operation: The security token included in the request is expired
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 126, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000001A628D911F0>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000001A628D91160>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000001A628D910D0>
+
+  File "load_sample_data.py", line 117, in run
+    send_data_to_sqs(data)
+    |                ->    department_id   department_name  manager_id  location_id
+    |                   0             70  Public Relations       204.0         2700
+    |                   1    ...
+    -> <function send_data_to_sqs at 0x000001A628D91040>
+
+  File "load_sample_data.py", line 41, in send_data_to_sqs
+    queue = sqs.get_queue_by_name(QueueName='practice')
+            |   -> <function ResourceFactory._create_action.<locals>.do_action at 0x000001A62922FDC0>
+            -> sqs.ServiceResource()
+
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\boto3\resources\factory.py", line 520, in do_action
+    response = action(self, *args, **kwargs)
+               |      |      |       -> {'QueueName': 'practice'}
+               |      |      -> ()
+               |      -> sqs.ServiceResource()
+               -> <boto3.resources.action.ServiceAction object at 0x000001A6292707C0>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\boto3\resources\action.py", line 83, in __call__
+    response = getattr(parent.meta.client, operation_name)(*args, **params)
+                       |      |    |       |                |       -> {'QueueName': 'practice'}
+                       |      |    |       |                -> ()
+                       |      |    |       -> 'get_queue_url'
+                       |      |    -> <botocore.client.SQS object at 0x000001A629251820>
+                       |      -> ResourceMeta('sqs', identifiers=[])
+                       -> sqs.ServiceResource()
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\botocore\client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           |    |              |               -> {'QueueName': 'practice'}
+           |    |              -> 'GetQueueUrl'
+           |    -> <function BaseClient._make_api_call at 0x000001A628CACCA0>
+           -> <botocore.client.SQS object at 0x000001A629251820>
+  File "C:\Users\Sai Prashanth T S\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\botocore\client.py", line 635, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+          |           |                -> 'GetQueueUrl'
+          |           -> {'Error': {'Type': 'Sender', 'Code': 'ExpiredToken', 'Message': 'The security token included in the request is expired', 'Det...
+          -> <class 'botocore.exceptions.ClientError'>
+
+botocore.exceptions.ClientError: An error occurred (ExpiredToken) when calling the GetQueueUrl operation: The security token included in the request is expired
+2020-11-29 21:22:42.003 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-29 21:23:12.133 | INFO     | __main__:run:102 - Process Started
+2020-11-29 21:23:12.156 | INFO     | __main__:run:122 - Process Completed
+2020-11-29 21:23:50.999 | INFO     | __main__:run:103 - Process Started
+2020-11-29 21:23:51.016 | INFO     | __main__:run:123 - Process Completed
+2020-11-30 01:52:37.113 | INFO     | __main__:run:86 - Process Started
+2020-11-30 01:52:37.120 | ERROR    | utils:udf_method:62 - send_data_to_kinesis() missing 1 required positional argument: 'df'
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 110, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x00000238ED8C11F0>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x00000238ED8C1160>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000238ED8C10D0>
+
+  File "load_sample_data.py", line 103, in run
+    send_data_to_kinesis()
+    -> <function send_data_to_kinesis at 0x00000238ED8BFF70>
+
+TypeError: send_data_to_kinesis() missing 1 required positional argument: 'df'
+2020-11-30 01:52:37.138 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-30 01:52:48.297 | INFO     | __main__:run:86 - Process Started
+2020-11-30 01:52:48.415 | ERROR    | utils:udf_method:62 - sequence item 0: expected str instance, numpy.int64 found
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 110, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x00000182762711F0>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x0000018276271160>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x00000182762710D0>
+
+  File "load_sample_data.py", line 103, in run
+    send_data_to_kinesis(data)
+    |                    ->    department_id department_name  manager_id  location_id
+    |                       0            170   Manufacturing         NaN         1700
+    |                       1        ...
+    -> <function send_data_to_kinesis at 0x000001827626FF70>
+
+  File "load_sample_data.py", line 39, in send_data_to_kinesis
+    data = '|'.join(df.iloc[i, :].tolist())
+                    |  |    -> 0
+                    |  -> <property object at 0x000001827545D9F0>
+                    ->    department_id department_name  manager_id  location_id
+                       0            170   Manufacturing         NaN         1700
+                       1        ...
+
+TypeError: sequence item 0: expected str instance, numpy.int64 found
+2020-11-30 01:52:48.468 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+NoneType: None
+2020-11-30 01:53:54.289 | INFO     | __main__:run:86 - Process Started
+2020-11-30 01:53:54.390 | INFO     | __main__:run:106 - Process Completed
+2020-11-30 01:54:12.101 | INFO     | __main__:run:86 - Process Started
+2020-11-30 01:54:12.196 | INFO     | __main__:run:106 - Process Completed
+2020-11-30 01:54:39.922 | INFO     | __main__:run:87 - Process Started
+2020-11-30 01:54:40.000 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 111, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x0000020043A48280>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x0000020043A481F0>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x0000020043A48160>
+
+  File "load_sample_data.py", line 104, in run
+    send_data_to_kinesis(data)
+    |                    ->    department_id department_name  manager_id  location_id
+    |                       0            270         Payroll         NaN         1700
+    -> <function send_data_to_kinesis at 0x0000020043A48040>
+
+  File "load_sample_data.py", line 49, in send_data_to_kinesis
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
+2020-11-30 01:55:12.694 | INFO     | __main__:run:87 - Process Started
+2020-11-30 01:55:12.780 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 111, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000001A2544A8280>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000001A2544A81F0>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000001A2544A8160>
+
+  File "load_sample_data.py", line 104, in run
+    send_data_to_kinesis(data)
+    |                    ->    department_id  department_name  manager_id  location_id
+    |                       0             20        Marketing       201.0         1800
+    |                       1      ...
+    -> <function send_data_to_kinesis at 0x000001A2544A8040>
+
+  File "load_sample_data.py", line 49, in send_data_to_kinesis
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
+2020-11-30 01:55:47.796 | INFO     | __main__:run:87 - Process Started
+2020-11-30 01:55:47.881 | ERROR    | utils:udf_method:66 - exiting the process! due to error above
+Traceback (most recent call last):
+
+  File "load_sample_data.py", line 111, in <module>
+    print(run())
+          -> <function timeit.<locals>.time_method at 0x000002690F4B0280>
+
+  File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 78, in time_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function udf_exception.<locals>.udf_method at 0x000002690F4B01F0>
+
+> File "C:\Users\Sai Prashanth T S\PycharmProjects\LearnAWS\scripts\utils.py", line 57, in udf_method
+    result = method1(*args, **kwargs)
+             |        |       -> {}
+             |        -> ()
+             -> <function run at 0x000002690F4B0160>
+
+  File "load_sample_data.py", line 104, in run
+    send_data_to_kinesis(data)
+    |                    ->    department_id  department_name  manager_id  location_id
+    |                       0             20        Marketing       201.0         1800
+    |                       1      ...
+    -> <function send_data_to_kinesis at 0x000002690F4B0040>
+
+  File "load_sample_data.py", line 49, in send_data_to_kinesis
+    exit(1)
+
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1776.0_x64__qbz5n2kfra8p0\lib\_sitebuiltins.py", line 26, in __call__
+    raise SystemExit(code)
+                     -> 1
+
+SystemExit: 1
