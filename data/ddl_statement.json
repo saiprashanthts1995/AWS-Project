@@ -1,0 +1,7 @@
+{
+  "create_statement_departments" : " CREATE TABLE if not exists departments ( department_id INTEGER(4) , department_name VARCHAR(30) , manager_id INTEGER(6) , location_id INTEGER(4) ) ;",
+  "create_statement_employees" : " CREATE TABLE if not exists employees ( employee_id INTEGER(6) , first_name VARCHAR(20) , last_name VARCHAR(25) , email VARCHAR(25) , phone_number VARCHAR(20) , hire_date DATE , job_id VARCHAR(10) , salary NUMERIC(8,2) , commission_pct NUMERIC(2,2) , manager_id INTEGER(6) , department_id INTEGER(4) ) ;",
+  "drop_statement_departments":  "DROP TABLE if exists departments",
+  "drop_statement_employees":  "DROP TABLE if exists employees"
+}
+
