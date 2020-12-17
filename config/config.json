@@ -1,8 +1,8 @@
 {
 "RDS":{
   "user": "admin",
-  "password": "Great007",
-  "host": "practice1.csdxufks5a8x.us-east-1.rds.amazonaws.com",
+  "password": "password",
+  "host": "hostname",
   "port": "3306",
   "database": "practice"
 },
